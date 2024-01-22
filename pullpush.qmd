@@ -1,0 +1,10 @@
+---
+title: "Class Prep 2"
+author: "Ben LeStage"
+format: 
+  html:
+    embed-resources: true
+---
+
+
+### random to practice push
