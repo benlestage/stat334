@@ -1,0 +1,90 @@
+---
+title: "Class Prep 4"
+author: "Ben LeStage"
+format: 
+  html:
+    embed-resources: true
+---
+
+
+What is the difference between a colour’s hue and a colour’s intensity?
+
+A colour's hue is what we are usually talking about what colour something is i.e. red, blue, green. A colour's intensity is the vividness of the colour.
+
+
+
+Think of an example where you would want to use a sequential colour scale that’s different from the one given in the text. Then, think of examples where you would use a diverging colour scale and an unordered colour scale.
+
+We might use a sequential colour scale when showing what proportion of states voted for a republican or democrat candidate a more intense red or blue colour would represent a higher or lower proportion of votes for that party. 
+
+
+
+Some gestalt inferences take priority over others. Using Figure 1.21, give an example of a gestalt inference that takes priority over another one.
+
+In the bottom row the similarity in shape of the circles and squares takes priority over the similarity in size.
+
+
+
+“Bar charts are better than Pie charts for visualizing a single categorical variable.” Explain how results shown in Figure 1.23 support this claim.
+
+It is much easier to see the difference in size of bars becuase they are on a scale rather than trying to figure out which slice of a pie chart is larger than another. It is easier to see a taller or longer bar than to work out the angle of a pie chart slice.
+
+
+Suppose you have a scatterplot of height on the y-axis vs. weight on the x-axis for people born in Canada, Mexico, and the United States. You now want to explore whether the relationship is different for people born in the United States, people born in Canada, and people born in Mexico. Should you use different shapes to distinguish the three countries or should you use different colours? Explain using either Figure 1.24 or 1.25.
+
+According to figure 1.25 colour hue is more effective to distinguish differences in data than shape.
+
+
+When might you use the left-side of Figure 1.27 to show the law school data? When might you use the right-side of Figure 1.27 to show the law school data?
+
+You might use the left-side if you are trying to convey that the law school data has taken a very sharp decline. You might use the right side if you are trying to show the decline is fairly mild.
+
+
+Summary: What are two takeaways from Sections 1.3-1.7?
+
+The way we use different pieces of data visuals can completely change the meaning or interpretation of the data shown.
+Some ways of presenting data visually are much easier for people to distinguish than others.
+
+
+What is one question that you have about the reading?
+
+Why are colours more effective when distinguishing groups than shapes, i would have assumed the opposite.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

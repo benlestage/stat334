@@ -1,0 +1,168 @@
+---
+title: "Section 3: Applied Concepts"
+author: "Ben LeStage"
+format: 
+  html:
+    embed-resources: true
+---
+
+_Example 1_
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+theme_set(theme_minimal())
+
+penguins_sum <- penguins |> group_by(species, year) |>
+  summarise(n_penguins = n()) |>
+  mutate(year = factor(year))
+
+ggplot(data = penguins_sum, aes(x = year, fill = species)) +
+  geom_col(aes(y = n_penguins)) +
+  theme_minimal() +
+  scale_fill_viridis_d()
+```
+
+```{r}
+
+ggplot(data = penguins_sum, aes(x = year, y = n_penguins,
+                                colour = species, group = species)) +
+  geom_line() +
+  theme_minimal() +
+  scale_colour_viridis_d()
+```
+
+The line plot is overall preferable because it is hard to see trends in the species penguins that are not the Gentoo species (which is the baseline).
+
+
+_Example 2_
+```{r}
+ggplot(data = penguins, aes(x = species)) +
+  geom_bar(fill = "darkslategray4") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = penguins, aes(x = species)) +
+  geom_bar(fill = "darkslategray4") +
+  coord_cartesian(ylim = c(50, 160)) +
+  theme_minimal()
+```
+
+The first is preferable because if our visualization encodes area or length the y-axis should start at 0.
+
+
+_Example 3_
+```{r}
+library(ggbeeswarm)
+ggplot(data = penguins, aes(x = species, y = body_mass_g)) +
+  geom_beeswarm(alpha = 0.7) +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = body_mass_g)) +
+  geom_beeswarm(alpha = 0.7) +
+  theme_minimal() +
+  ylim(c(0, 6500))
+```
+
+The first is prefereable ebcause including 0 as a y limit gives this type of graph a lot of wasted space
+
+_Example 4_
+pair 1
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(colour = species)) +
+  scale_colour_viridis_d() +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point() +
+  facet_wrap( ~ species) +
+  theme_minimal() 
+```
+
+
+The first is preferable because it better utilizes the position of points
+
+
+pair 2
+```{r}
+penguins <- penguins |> mutate(species_island_sex = interaction(species, 
+                                                                island,
+                                                                sex))
+ggplot(data = penguins |>
+         filter(!is.na(sex)), aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point(aes(colour = species_island_sex)) +
+  scale_colour_viridis_d() +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = penguins |> filter(!is.na(sex)), 
+                                 aes(x = bill_length_mm, y = bill_depth_mm)) +
+  geom_point() +
+  facet_wrap(~ species_island_sex) +
+  theme_minimal()
+```
+
+The faceted is preferable because too many groups on first, too many colours too hard to distinguish
+
+Improved Plots - 
+
+```{r}
+ggplot(data = penguins |> filter(!is.na(sex)), 
+                                 aes(x = bill_length_mm, y = bill_depth_mm, colour = sex, shape = species)) +
+  geom_point() +
+  facet_wrap(~island) +
+  theme_minimal()
+```
+
+```{r}
+
+ggplot(data = penguins |> filter(!is.na(sex)),
+       aes(x = bill_length_mm, y = bill_depth_mm, colour = sex)) +
+         geom_point() + 
+  facet_grid(species ~ island) + 
+  theme_minimal()
+```
+
+
+_Example 5_
+```{r}
+ggplot(data = penguins, aes(x = island)) +
+  geom_bar(fill = "darkslategray4") +
+  theme_minimal()
+```
+
+```{r}
+penguins_island <- penguins |> count(island)
+ggplot(penguins_island, aes(x = "", y = n, fill = island)) +
+  geom_bar(stat = "identity", width = 1, colour = "white") +
+  coord_polar("y", start = 0) +
+  theme_void() +
+  scale_fill_viridis_d()
+```
+
+The bar plot is stronger because it effectively uses position of the bars while the areas of the pie chart are harder to accurately interpret.
+
+
+_Example 6_
+
+??? In the first, it's easier to distinguish the region while the second has a higher data to ink ratio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
