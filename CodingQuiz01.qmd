@@ -1,0 +1,61 @@
+---
+title: "In Class Quiz 1"
+author: "Ben LeStage"
+format: 
+  html:
+    embed-resources: true
+---
+
+
+Statement of Integrity: “All work presented is my own, and I have followed all rules for collaboration. I have not used any AI for this assignment.”
+
+Ben LeStage
+
+
+### Question 1
+```{r}
+
+library(tidyverse)
+diamonds
+
+```
+
+```{r}
+
+ggplot(data = diamonds, aes(x = price)) +
+  geom_histogram(colour = "black", fill = "white") +
+  facet_wrap(~cut)
+
+```
+
+
+### Question 2
+```{r}
+
+ggplot(data = diamonds, aes(x = price)) +
+  geom_histogram(colour = "black", fill = "white") +
+  facet_wrap(~cut) +
+  theme(axis.line = element_line(colour = "green")) +
+  theme(axis.text = element_text(colour = "red"))
+
+```
+
+
+### Question 3
+https://github.com/benlestage/stat334
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
